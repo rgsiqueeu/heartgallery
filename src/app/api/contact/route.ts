@@ -10,27 +10,32 @@ const schema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  let body: unknown;
   try {
-    const body = await req.json();
-    const parsed = schema.safeParse(body);
-    if (!parsed.success) {
-      const first = parsed.error.issues[0]?.message ?? "Invalid input.";
-      return NextResponse.json({ error: first }, { status: 400 });
-    }
-
-    const { name, email, message } = parsed.data;
-    await db.contactMessage.create({ data: { name, email, message } });
-
-    notifyNewLead({ name, email, message }).catch((err) =>
-      console.error("[contact] lead notification failed:", err)
-    );
-
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("[contact] failed:", err);
-    return NextResponse.json(
-      { error: "Could not send the message right now." },
-      { status: 500 }
-    );
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid input." }, { status: 400 });
   }
+
+  const parsed = schema.safeParse(body);
+  if (!parsed.success) {
+    const first = parsed.error.issues[0]?.message ?? "Invalid input.";
+    return NextResponse.json({ error: first }, { status: 400 });
+  }
+
+  const { name, email, message } = parsed.data;
+
+  // Persistir o lead é best-effort: em preview/prototype sem base de dados de
+  // produção configurada (DATABASE_URL), isto não deve impedir o envio.
+  try {
+    await db.contactMessage.create({ data: { name, email, message } });
+  } catch (err) {
+    console.error("[contact] could not persist lead:", err);
+  }
+
+  notifyNewLead({ name, email, message }).catch((err) =>
+    console.error("[contact] lead notification failed:", err)
+  );
+
+  return NextResponse.json({ ok: true });
 }
