@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const anton = localFont({
@@ -71,6 +72,7 @@ export default function RootLayout({
         className={`${anton.variable} ${fraunces.variable} ${archivo.variable} ${grotesk.variable} antialiased bg-ink text-bone noise`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
