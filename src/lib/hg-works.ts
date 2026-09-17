@@ -1,0 +1,190 @@
+export type WorkCat = "tattoo" | "piercing";
+
+export interface Work {
+  src: string;
+  w: number;
+  h: number;
+  cat: WorkCat;
+  title: { pt: string; en: string };
+  style: { pt: string; en: string };
+}
+
+export const WORKS: Work[] = [
+  {
+    src: "/images/hg/w-01.webp",
+    w: 837,
+    h: 1024,
+    cat: "tattoo",
+    title: { pt: "O Olhar", en: "The Gaze" },
+    style: { pt: "Surrealismo P&B", en: "B&G Surrealism" },
+  },
+  {
+    src: "/images/hg/w-02.webp",
+    w: 900,
+    h: 1200,
+    cat: "tattoo",
+    title: { pt: "Retrato partido", en: "Broken Portrait" },
+    style: { pt: "Abstracto", en: "Abstract" },
+  },
+  {
+    src: "/images/hg/w-03.webp",
+    w: 1400,
+    h: 1400,
+    cat: "tattoo",
+    title: { pt: "Coroada", en: "Crowned" },
+    style: { pt: "Realismo P&B", en: "B&G Realism" },
+  },
+  {
+    src: "/images/hg/w-04.webp",
+    w: 1200,
+    h: 1500,
+    cat: "tattoo",
+    title: { pt: "Ornamental", en: "Ornamental" },
+    style: { pt: "Blackwork", en: "Blackwork" },
+  },
+  {
+    src: "/images/hg/w-05.webp",
+    w: 1200,
+    h: 1600,
+    cat: "tattoo",
+    title: { pt: "Memento", en: "Memento" },
+    style: { pt: "Realismo P&B", en: "B&G Realism" },
+  },
+  {
+    src: "/images/hg/w-06.webp",
+    w: 1400,
+    h: 781,
+    cat: "tattoo",
+    title: { pt: "Medusa — fresca vs. curada", en: "Medusa — fresh vs. healed" },
+    style: { pt: "Realismo P&B", en: "B&G Realism" },
+  },
+  {
+    src: "/images/hg/w-07.webp",
+    w: 1400,
+    h: 2100,
+    cat: "tattoo",
+    title: { pt: "Retrato feminino", en: "Female Portrait" },
+    style: { pt: "Realismo P&B", en: "B&G Realism" },
+  },
+  {
+    src: "/images/hg/w-08.webp",
+    w: 1400,
+    h: 1400,
+    cat: "tattoo",
+    title: { pt: "Dragão", en: "Dragon" },
+    style: { pt: "Blackwork", en: "Blackwork" },
+  },
+  {
+    src: "/images/hg/w-09.webp",
+    w: 900,
+    h: 1200,
+    cat: "tattoo",
+    title: { pt: "Para sempre", en: "Forever" },
+    style: { pt: "Micro-realismo", en: "Micro-realism" },
+  },
+  {
+    src: "/images/hg/w-10.webp",
+    w: 1080,
+    h: 1080,
+    cat: "tattoo",
+    title: { pt: "Memória", en: "Memory" },
+    style: { pt: "P&B narrativo", en: "B&G Narrative" },
+  },
+  {
+    src: "/images/hg/w-11.webp",
+    w: 1000,
+    h: 1000,
+    cat: "tattoo",
+    title: { pt: "Sardinha", en: "Sardine" },
+    style: { pt: "Azulejo português", en: "Portuguese tile" },
+  },
+  {
+    src: "/images/hg/w-12.webp",
+    w: 1200,
+    h: 2133,
+    cat: "tattoo",
+    title: { pt: "Azulejo", en: "Tile" },
+    style: { pt: "Azulejo português", en: "Portuguese tile" },
+  },
+  {
+    src: "/images/hg/w-13.webp",
+    w: 1200,
+    h: 2132,
+    cat: "tattoo",
+    title: { pt: "Concha", en: "Shell" },
+    style: { pt: "Fine line", en: "Fine line" },
+  },
+  {
+    src: "/images/hg/w-14.webp",
+    w: 1200,
+    h: 2132,
+    cat: "tattoo",
+    title: { pt: "Abelha", en: "Bee" },
+    style: { pt: "Fine line", en: "Fine line" },
+  },
+  {
+    src: "/images/hg/p-01.webp",
+    w: 1200,
+    h: 1200,
+    cat: "piercing",
+    title: { pt: "Curadoria dourada", en: "Golden curation" },
+    style: { pt: "Jóia · titânio", en: "Jewellery · titanium" },
+  },
+  {
+    src: "/images/hg/p-02.webp",
+    w: 1200,
+    h: 1400,
+    cat: "piercing",
+    title: { pt: "Constelação", en: "Constellation" },
+    style: { pt: "Jóia · cristal", en: "Jewellery · crystal" },
+  },
+  {
+    src: "/images/hg/p-03.webp",
+    w: 900,
+    h: 1200,
+    cat: "piercing",
+    title: { pt: "Diamante", en: "Diamond" },
+    style: { pt: "Jóia premium", en: "Premium jewellery" },
+  },
+  {
+    src: "/images/hg/p-04.webp",
+    w: 1000,
+    h: 1250,
+    cat: "piercing",
+    title: { pt: "Aro duplo", en: "Double hoop" },
+    style: { pt: "Jóia · ouro", en: "Jewellery · gold" },
+  },
+  {
+    src: "/images/hg/p-05.webp",
+    w: 1024,
+    h: 1024,
+    cat: "piercing",
+    title: { pt: "V inicial", en: "Initial V" },
+    style: { pt: "Jóia · cristal", en: "Jewellery · crystal" },
+  },
+  {
+    src: "/images/hg/p-06.webp",
+    w: 1000,
+    h: 1131,
+    cat: "piercing",
+    title: { pt: "Minimal", en: "Minimal" },
+    style: { pt: "Jóia · ouro", en: "Jewellery · gold" },
+  },
+  {
+    src: "/images/hg/p-07.webp",
+    w: 1300,
+    h: 1300,
+    cat: "piercing",
+    title: { pt: "Precisão", en: "Precision" },
+    style: { pt: "Procedimento", en: "Procedure" },
+  },
+];
+
+export const STUDIO_IMAGES = {
+  hero: "/images/hg/s-02.webp",
+  manifesto: "/images/hg/s-04.webp",
+  artists: ["/images/hg/w-03.webp", "/images/hg/w-08.webp", "/images/hg/s-06.webp", "/images/hg/s-04.webp"],
+  services: ["/images/hg/s-01.webp", "/images/hg/p-04.webp", "/images/hg/s-05.webp", "/images/hg/s-03.webp"],
+  contact: "/images/hg/s-01.webp",
+  og: "/images/hg/s-02.webp",
+};
